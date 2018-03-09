@@ -33,15 +33,15 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
   //add two numbers
-  var productOfNums = a + b;
+  var productOfNums = a * b;
   //make a string
-  var answerForNum = 'The product of ' + a + ' and ' + b + ' is 45.';
+  var answerForNum = 'The product of ' + a + ' and ' + b + ' is ' + productOfNums + '.';
   //make array [#,string]
   return [productOfNums, answerForNum];
 }
 
 // Here is the test for multiply(); uncomment it to run it
-testMultiply(5,9);
+// testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -58,11 +58,25 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  //sum of all 3
+  var firstSumAB = sum(a,b)[0];
+  var answerSum = sum(firstSumAB, c)[0];
+  console.log(answerSum);
 
+  //product of all 3
+  var firstProductAB = multiply(a, b)[0];
+  var answerProduct = multiply(firstProductAB, c)[0];
+  console.log(answerProduct);
+  //string 1
+  var answerToSumOfNums = a + ' and ' + b + ' and ' + c + ' sum to ' + answerSum + '.';
+  //string 2
+  var answerToProductOfNums = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + answerProduct + '.';
+  //return an array 0=sum of all 3, 1=product of all 3, 2=string1, 3=string2
+  return [answerSum, answerProduct, answerToSumOfNums, answerToProductOfNums];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
